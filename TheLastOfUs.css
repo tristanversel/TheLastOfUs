@@ -55,9 +55,9 @@ nav{
     align-items: center;
     justify-content: space-between;
     height: 70px;
-    width: 100%;
     background: linear-gradient(to left, #4D624A 50%,  #000 50%) right;
     background-size: 200%;
+    padding-left: 20px;
 }
 
 .nav_change{
@@ -70,7 +70,6 @@ nav{
     height: 100%;
     display: flex;
     align-items: center;
-    padding-left: 20px;
 }
 
 #logo{
@@ -110,6 +109,7 @@ nav{
     display: flex;
     align-items: center;
     height: 100%;
+    transition: all 0.4s;
 }
 
 ul{
@@ -118,6 +118,7 @@ ul{
     align-items: center;
     list-style-type: none;
     gap: 3em;
+    transition: all 0.4s;
 }
 
 li{
@@ -163,6 +164,10 @@ a:hover{
 #btnmenu:hover{
     cursor: pointer;
     font-size: 30px;
+}
+
+#menu_ham{
+    display: none;
 }
 
 #hero{
@@ -317,3 +322,161 @@ a:hover{
     font-size: 24px ;
 }
 
+
+@media all and (max-width: 1100px) {
+
+    #gauche{
+        display: none;
+    }
+
+    nav{
+        padding-right: 20px;
+    }  
+
+    #menu{
+        display: none;
+    }
+
+    #menu_ham{
+        display: block;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        opacity: 1;
+        z-index: 2;
+    }
+
+    #tlou{
+        z-index: 2;
+    }
+
+    #btnmenu{
+        width: 140px;
+        height: 60px;
+    }
+
+    #bar, #menu_ham::before, #menu_ham::after{
+        content: '';
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: white;
+        margin: 5px 0px;
+    }
+
+    .bar-active{
+        opacity: 0;
+    }
+
+    .menu_ham_active::before{
+        transform: rotate(-45deg) translateY(5px) translateX(-6px);
+    }
+
+    .menu_ham_active::after{
+        transform: rotate(45deg) translateY(-5.6px) translateX(-6px) ;
+    }
+
+    #naughtydog{
+        z-index: 2;
+    }
+
+
+
+    .menu-active{
+        display: flex !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 114px) !important;
+        margin-top: 114px;
+        background-color: #2B2B2B;
+        z-index: 1;
+    }
+
+    .ul-active{
+        width: 100%;
+        padding: 0;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #hero{
+        background: url("images/middle_background.jpg");
+        background-size:cover;
+        display: flex;
+    }
+
+    #droite{
+        display: flex;
+        flex-direction: column;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    #titre{
+        align-items: center;
+        font-size: 35px;
+    }
+
+    .text:nth-child(1){
+        transform: rotateZ(-1deg);
+    }
+    .text:nth-child(2){
+        transform: none;
+    }
+
+    .bloc_item img{
+        height: 70%;
+    }
+
+}
+
+@media all and (max-width: 600px){
+    #hero{
+        background: url("images/mobile_dark_background.jpg");
+        background-size:cover;
+    }
+
+    #titre{
+        font-size: 27px;
+        transform: translateY(-20px);
+    }
+
+
+
+}
+
+@media all and (max-width: 500px){
+    #firefly{
+        display: none;
+    }
+
+    #titre{
+        font-size: 20px;
+    }
+
+    #soustitre h4{
+        font-size: 11px;
+        line-height: 17px;
+        transform: translateY(-130px);
+    }
+
+    #droite{
+        justify-content: space-around;
+    }
+
+    #items{
+        transform: translateY(-30px);
+    }
+
+    .bloc_item img{
+        height: 19vw;
+        border-width: 2px;
+    }
+
+    .itembtn{
+        font-size: 17px;
+    }
+
+}
